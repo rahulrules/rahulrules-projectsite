@@ -6,9 +6,21 @@
 
           ttq.load('C8H7J70394AVM2009D10');
           ttq.page();
+            ttq.instance('C8H7J70394AVM2009D10').track('FormSubmit');
         }(window, document, 'ttq');
+        
 </script>
-    </head>
+ <script  type = "text/javascript">
+   
+     function getAllUrlParams(url) {
+
+    // get query string from url (optional) or window
+    var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+  
+    return queryString;
+    }
+  </script>
+ </head>
 <body>
     This is a test site to test the functionality of Tiktok Pixel code.  Added button to this html.
     <br></br>
@@ -18,8 +30,20 @@
     <button type="button"> Dont Click Me! </button>
 <br></br>
 <br></br>
+
 <iframe src="https://rahulrules.github.io/formsubmission/"
             title="sign-up page" width="600" height="400">
 </iframe>
+<iframe id="myIframe" frameborder="0" marginwidth="0" marginheight="0" scrolling="NO" width="100%" height="100%"></iframe>
 </body>
+<script type = "text/javascript">
+            let myIframe = document.getElementById("myIframe");
+            let url_string = "https://rahulrules.github.io/formsubmission/";
+            let queryParams = getAllUrlParams();
+         
+    
+            let adsURL = url_string+"?"+queryParams;
+            console.log(adsURL);
+            myIframe.src = adsURL;
+        </script>
 </html>
