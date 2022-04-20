@@ -29,6 +29,7 @@
     <br></br>
     <button type="button"> Click Me! </button>
     <button type="button"> Dont Click Me! </button>
+    <button type="button" onclick= "loadiframe()"> Click to trigger Iframe! </button>
 <br></br>
 <br></br>
 <!--
@@ -38,7 +39,8 @@
 <iframe id="myIframe" frameborder="0" marginwidth="0" marginheight="0" scrolling="NO" width="100%" height="100%"></iframe>
 </body>
 <script type = "text/javascript">
-            let myIframe = document.getElementById("myIframe");
+    function loadiframe(){
+          let myIframe = document.getElementById("myIframe");
             let url_string = "https://rahulrules.github.io/formsubmission/";
             let queryParams = getAllUrlParams();
             //console.log(queryParams)
@@ -46,5 +48,7 @@
             let adsURL = url_string+"?"+queryParams;
             console.log(adsURL);
             myIframe.src = adsURL;
+    }
+          
         </script>
 </html>
