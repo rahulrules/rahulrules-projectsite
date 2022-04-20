@@ -16,7 +16,7 @@
 
     // get query string from url (optional) or window
     var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
-    console.log("queryString:" + queryString);
+    //console.log("queryString:" + queryString);
     return queryString;
     }
   </script>
@@ -41,9 +41,9 @@
             let myIframe = document.getElementById("myIframe");
             let url_string = "https://rahulrules.github.io/formsubmission/";
             let queryParams = getAllUrlParams();
-            console.log(queryParams)
+            //console.log(queryParams)
     
-            let adsURL = url_string;
+            let adsURL = url_string+"?"+queryParams;
             console.log(adsURL);
             myIframe.src = adsURL;
         </script>
