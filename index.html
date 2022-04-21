@@ -1,49 +1,43 @@
 <!DOCTYPE html >
-    <head>
-    <script>
-        !function (w, d, t) {
-          w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
-
-          ttq.load('C8H7J70394AVM2009D10');
-          ttq.page();
-            ttq.instance('C8H7J70394AVM2009D10').track('FormSubmit');
-        }(window, document, 'ttq');
-        
-</script>
- <script  type = "text/javascript">
-   
-     function getAllUrlParams(url) {
-
-    // get query string from url (optional) or window
-    var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
-    return queryString;
-    }
-  </script>
+ <head>
+  
+    <script  type = "text/javascript">
+         //sample javascript function to retrieve the landing page Query Parameters
+         // This function retrieves the Query String in full. This function can be modified to retrieve Params & Values.
+         function getAllUrlParams(url) {
+            // get query string from url (optional) or window
+            var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+            return queryString;
+        }
+    </script>
  </head>
 <body>
-    This is a test site to test the functionality of Tiktok Pixel code. 
-    This web page contains an IFrame which passes the parent URL params
+    This is the client's landing page (parent page). 
     <br></br>
-    Modified pixel code.
+    This page triggers an Iframe when "Click to trigger Iframe" is clicked. 
+    This is similar to triggering the Iframe when an event happens on the client's landing page. Example: "submit" event for a form.
+    <br></br>
     <br></br>
     <button type="button"> Click Me! </button>
-    <button type="button"> Dont Click Me! </button>
+     <br></br>
+     <br></br>
     <button type="button" onclick= "loadIFrame()"> Click to trigger Iframe! </button>
-<br></br>
-<br></br>
 
+   <!-- This Iframe Declaration is a must in the body of the html page followed by a script to set Iframe properties after the body-->
 <iframe id="myIframe" frameborder="0" marginwidth="0" marginheight="0" scrolling="NO" width="100%" height="100%"></iframe>
 </body>
+
 <script type = "text/javascript">
+    //I frame is to be defined in the html body prior to setting the properties here.
     function loadIFrame(){
           let myIframe = document.getElementById("myIframe");
             // I frame URL
             let url_string = "https://rahulrules.github.io/formsubmission/";
-            let queryParams = getAllUrlParams();
+            let queryParams = getAllUrlParams(); // collects the query parameter from the landing page URL (parent page).
             let adsURL = url_string+"?"+queryParams;
-            console.log(adsURL);
-            myIframe.src = adsURL;
+            //console.log(adsURL);
+            myIframe.src = adsURL; // set the src URL of the I frame by appending Query Parameters of landing page URL (parent page)
     }
           
-        </script>
+</script>
 </html>
